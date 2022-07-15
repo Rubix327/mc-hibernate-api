@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<project name="McHibernateApi" default="Build">
+
+    <xmlproperty file="pom.xml" prefix="pom" keeproot="false"/>
+    <property name="plugin.version" value="${pom.version}"/>
+
+    <target name="init">
+        <buildnumber/>
+    </target>
+
+    <condition property="serverPath" value="C:\MCServers\TestServer1.8">
+        <os family="windows"/>
+    </condition>
+
+    <target name="Build">
+        <delete>
+            <fileset dir="${serverPath}\plugins\" includes="${ant.project.name}*"/>
+        </delete>
+        <buildnumber/>
+        <copy file="./target/${ant.project.name}-${plugin.version}.jar"
+              tofile="${serverPath}\plugins\${ant.project.name}-${plugin.version}-b${build.number}.jar"/>
+    </target>
+
+</project>

@@ -1,0 +1,4 @@
+name: McHibernateApi
+version: 1.0.1-SNAPSHOT
+main: me.rubix327.mchibernateapi.McHibernateApiMain
+author: Rubix327
